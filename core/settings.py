@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'dish',
     'menu',
     'basket',
+    'gagafood',
 ]
 
 MIDDLEWARE = [

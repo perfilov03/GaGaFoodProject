@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог ресторанов</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/Logo.svg">
+    <link rel="stylesheet" href="../src/css/reset.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- HEADER -->
+        <main class="page">
+            <section class="page__catalogue catalogue">
+                <div class="catalogue__wrapper">
+                    <div class="catalogue__crumbs crumbs">
+                        <a href="../index.html" class="crumbs__link">Главная</a> / Рестораны и кафе
+                    </div>
+                    <h1 class="catalogue__title">Рестораны и кафе</h1>
+                    <!-- <form action="" class="catalogue__form form">
+                        <select type="text" class="form__filter">
+                        <div class="form__search">
+                            <input type="text" class="form__string">
+                            <button class="form__button"></button>
+                        </div>
+                    </form> -->
+                    <div class="catalogue__body">
+                        {% for r in restaurants %}
+                        <div class="catalogue__card">
+                            <img src="../images/BUZFood.jpg" alt="{{r.title}}" class="catalogue__photo">
+                            <div class="catalogue__description">
+                                <div class="catalogue__article">
+                                    <!-- <h2 class="catalogue__name">BUZFood</h2>
+                                    <p class="catalogue__text">Премиальные салаты</p> -->
+                                    <h2 class="catalogue__name">{{r.title}}</h2>
+                                    <p class="catalogue__text">{{r.description}}</p>
+                                </div>
+                                <a href="BUZFood.html" class="catalogue__button">Выбрать</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- <div class="catalogue__card">
+                            <img src="../images/KFC.jpg" alt="KFC" class="catalogue__photo">
+                            <div class="catalogue__description">
+                                <div class="catalogue__article">
+                                    <h2 class="catalogue__name">KFC</h2>
+                                    <p class="catalogue__text">Фастфуд</p>
+                                </div>
+                                <a href="" class="catalogue__button">Выбрать</a>
+                            </div>
+                        </div>
+                        <div class="catalogue__card">
+                            <img src="../images/Claude-Monet.jpg" alt="Claude-Monet" class="catalogue__photo">
+                            <div class="catalogue__description">
+                                <div class="catalogue__article">
+                                    <h2 class="catalogue__name">Claude Monet</h2>
+                                    <p class="catalogue__text">Французская кухня</p>
+                                </div>
+                                <a href="" class="catalogue__button">Выбрать</a>
+                            </div>
+                        </div>
+                        <div class="catalogue__card">
+                            <img src="../images/Yakitoria.jpg" alt="Якитория" class="catalogue__photo">
+                            <div class="catalogue__description">
+                                <div class="catalogue__article">
+                                    <h2 class="catalogue__name">Якитория</h2>
+                                    <p class="catalogue__text">Японская кухня</p>
+                                </div>
+                                <a href="" class="catalogue__button">Выбрать</a>
+                            </div>
+                        </div>
+                        <div class="catalogue__card">
+                            <img src="../images/FrancBurger.jpg" alt="Франклинс Бургер" class="catalogue__photo">
+                            <div class="catalogue__description">
+                                <div class="catalogue__article">
+                                    <h2 class="catalogue__name">Франклинс Бургер</h2>
+                                    <p class="catalogue__text">Фастфуд</p>
+                                </div>
+                                <a href="" class="catalogue__button">Выбрать</a>
+                            </div>
+                        </div>
+                        <div class="catalogue__card">
+                            <img src="../images/ToTo.jpg" alt="Пицца То-То" class="catalogue__photo">
+                            <div class="catalogue__description">
+                                <div class="catalogue__article">
+                                    <h2 class="catalogue__name">Пицца То-То</h2>
+                                    <p class="catalogue__text">Пиццерия</p>
+                                </div>
+                                <a href="" class="catalogue__button">Выбрать</a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- FOOTER -->
+    </div>
+    <script src="../src/scripts/app.js"></script>
+</body>
+</html>

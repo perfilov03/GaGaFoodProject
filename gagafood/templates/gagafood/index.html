@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GaGaFood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/Logo.svg">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__wrapper">
+                <div class="header__navigation">
+                    <div class="header__menu menu">
+                        <div class="menu__burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="menu__box">
+                            <ul class="menu__list">
+                                <li class="menu__item"><img src="images/logo.svg" alt="Logo" class="menu__logo"></li>
+                                <li class="menu__item"><a href="#">Главная</a></li>
+                                <li class="menu__item"><a href="pages/catalogue.html">Рестораны и кафе</a></li>
+                                <li class="menu__item"><a href="#">Заказать доставку</a></li>
+                                <li class="menu__item"><a href="#">Социальные сети</a></li>
+                                <li class="menu__item"><a href="#">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header__search">
+                        <img src="images/Search.svg" alt="Search" class="header__image">
+                    </div>
+                </div>
+                <div class="header__cover">
+                    <img src="images/logo.svg" alt="Logo" class="header__logo">
+                </div>
+                <div class="header__user-management">
+                    <a class="header__icon" href="#">
+                        <img src="images/basket.svg" alt="Basket" class="header__image">
+                    </a>
+                    <a class="header__icon" href="#">
+                        <img src="images/profile.svg" alt="Profile" class="header__image">
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main class="page">
+            <section class="page__classification classification">
+                <div class="classification__wrapper">
+                    <a href="#" class="classification__item">
+                        <img src="images/dining.png" alt="Столовая" class="classification__photo">
+                        <p class="classification__text">
+                            Столовые
+                        </p>
+                    </a>
+                    <a href="#" class="classification__item">
+                        <img src="images/fastfood.png" alt="Фастфуд" class="classification__photo">
+                        <p class="classification__text">
+                            Фастфуд
+                        </p>
+                    </a>
+                    <a href="#" class="classification__item">
+                        <img src="images/pizza.png" alt="Пиццерии" class="classification__photo">
+                        <p class="classification__text">
+                            Пиццерии
+                        </p>
+                    </a>
+                    <a href="#" class="classification__item">
+                        <img src="images/rolls.png" alt="Азиатская кухня" class="classification__photo">
+                        <p class="classification__text">
+                            Азиатская кухня
+                        </p>
+                    </a>
+                    <a href="#" class="classification__item">
+                        <img src="images/france.png" alt="Французская кухня" class="classification__photo">
+                        <p class="classification__text">
+                            Французская кухня
+                        </p>
+                    </a>
+                    <a href="#" class="classification__item">
+                        <img src="images/coffee.png" alt="Кофейни" class="classification__photo">
+                        <p class="classification__text">
+                            Кофейни
+                        </p>
+                    </a>
+            </div>
+            </section>
+            <section class="page__baner baner">
+                <div class="baner__wrapper">
+                    <div class="baner__title">GaGaFood</div>
+                    <div class="baner__text">Сервис доставки еды из ресторанов в Москве</div>
+                    <div class="baner__wrapper-button">
+                        <a href="pages/catalogue.html" class="baner__button">
+                            Перейти к выбору
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="page__top-restaurants top-restaurants">
+            
+            <div class="slideshow-container top-restaurants__wrapper_min">
+                <h2 class="top-restaurants__title">Лучшие рестораны</h2>
+                <div class="top-restaurants__body">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                    <div class="mySlides fade">
+                        <img src="images/BUZFood-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                        <div class="top-restaurants__name">BUZFood</div>
+                        <div class="top-restaurants__description">Премиальные салаты</div>
+                    </div>
+                    <div class="mySlides fade" id="rew">
+                        <img src="images/KFC-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                        <div class="top-restaurants__name">KFC</div>
+                        <div class="top-restaurants__description">Фастфуд</div>
+                    </div>
+                    <div class="mySlides fade" id="rewu">
+                        <img src="images/ClaudeMonet-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                        <div class="top-restaurants__name">Claude Monet</div>
+                        <div class="top-restaurants__description">Французская кухня</div></a>
+                    </div>
+                    <a class="next" onclick="plusSlides(1)">&#10095</a>
+                </div>
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+                <div class="top-restaurants__wrapper">
+                    <h2 class="top-restaurants__title">Лучшие рестораны</h2>
+                    <div class="top-restaurants__body">
+                        <div class="top-restaurants__card">
+                            <a href="pages/BUZFood.html" class="top-restaurants__link">
+                                <img src="images/BUZFood-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                                <div class="top-restaurants__name">BUZFood</div>
+                                <div class="top-restaurants__description">Премиальные салаты</div>
+                            </a>
+                        </div>
+                        <div class="top-restaurants__card">
+                            <a href="#" class="top-restaurants__link">
+                                <img src="images/KFC-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                                <div class="top-restaurants__name">KFC</div>
+                                <div class="top-restaurants__description">Фастфуд</div>
+                            </a>
+                        </div>
+                        <div class="top-restaurants__card">
+                            <a href="#" class="top-restaurants__link">
+                                <img src="images/ClaudeMonet-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                                <div class="top-restaurants__name">Claude Monet</div>
+                                <div class="top-restaurants__description">Французская кухня</div></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page__text-block text-block">
+                <div class="text-block__wrapper">
+                    <article class="text-block__article">
+                        <p class="text-block__text">
+                            Сервис доставки еды <span> GaGaFood </span> – это отличный 
+                            выбор для тех, кто любит вкусные блюда, но не имеет достаточно
+                            времени, чтобы готовить или ходить в рестораны. Заказ еды 
+                            на дом или в офис существенно облегчает жизнь: не нужно 
+                            проводить время у плиты, можно хоть каждый день радовать 
+                            себя и близких оригинальными блюдами и пробовать деликатесы, 
+                            которых нет в стандартном меню.
+                        </p>
+                        <p class="text-block__text">Мы сотрудничаем с лучшими ресторанами 
+                            Москвы, что позволяет нам быть на сто процентов уверенными в 
+                            качестве доставляемой еды. Наши партнеры готовят блюда только 
+                            из свежих продуктов, большинство из которых производится на 
+                            местных фермерских и рыбных хозяйствах.
+                        </p>
+                        <p class="text-block__text">На сайте и в приложении Broniboy можно недорого заказать:</p>
+                        <ul class="text-block__text-list text-list">
+                            <li class="text-list__link">бургеры;</li>
+                            <li class="text-list__link">роллы и суши;</li>
+                            <li class="text-list__link">пиццу;</li>
+                            <li class="text-list__link">шашлыки;</li>
+                            <li class="text-list__link">мясные и рыбные блюда;</li>
+                            <li class="text-list__link">классические и экзотические салаты;</li>
+                            <li class="text-list__link">свежие морепродукты.</li>
+                        </ul>
+                        <p class="text-block__text">В меню есть уличная еда (фалафели, тортильи, 
+                            шаурма, хот-доги и бургеры), супы, пироги и сладкие десерты. 
+                            Поклонники здорового образа жизни могут заказать свежевыжатые 
+                            соки, овощные смузи и блюда на пару. Для вегетарианцев и 
+                            веганов есть большой выбор еды без содержания животных 
+                            продуктов.
+                        </p>
+                        <p class="text-block__text">Неважно, кто вы – любитель шашлыков, 
+                            веган или фрукторианец – в нашем меню найдутся вкусные блюда 
+                            для всех. <span>GaGaFood</span> ценит ваши вкусы и убеждения и всегда 
+                            готов посоветовать лучшее заведение для доставки, которое 
+                            подойдет именно вам.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <div class="footer__contacts contacts">
+                    <img src="images/Logo.svg" alt="Логотип" class="contacts__logo">
+                    <div class="contacts__article">
+                        <p class="contacts__title">Контакты:</p>
+                        <a href="tel:89308388696" class="contacts__telephone">8 (930) 838 86-96</a>
+                        <a href="mailto:gagafood@food.com" class="contacts__email">gagafood@food.com</a>
+                    </div>
+                </div>
+                <div class="footer__map map">
+                    <div class="map__wrapper">
+                        <div class="map__navigation">
+                            <ul class="map__list">
+                                <li class="map__item"><p class="map__link">Еда:</p></li>
+                                <li class="map__item"><a href="#" class="map__link">Суши и роллы</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Пицца</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Бургеры</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Шашлык</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Шаурма</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Торты</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Пироги</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Кофе</a></li>
+                            </ul>
+                        </div>
+                        <div class="map__navigation">
+                            <ul class="map__list">
+                                <li class="map__item"><p class="map__link visually-hidden">Еда:</p></li>
+                                <li class="map__item"><a href="#" class="map__link">Французская кухня</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Здоровая еда</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Вегатарианские блюда</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Мороженое</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Грузинская кухня</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Азиатская кухня</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Морепродукты</a></li>
+                                <li class="map__item"><a href="#" class="map__link">Завтраки</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="map__navigation">
+                        <ul class="map__list">
+                            <li class="map__item"><p class="map__link">О компании:</p></li>
+                            <li class="map__item"><a href="#" class="map__link">Контакты</a></li>
+                            <li class="map__item"><a href="#" class="map__link">Доставка</a></li>
+                            <li class="map__item"><a href="#" class="map__link">Партнеры</a></li>
+                            <li class="map__item"><a href="#" class="map__link">О нас</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__copyright">
+                    © Ostrovsky Production inc.
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="src/scripts/app.js"></script>
+</body>
+</html>
