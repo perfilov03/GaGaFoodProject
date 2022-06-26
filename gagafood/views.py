@@ -25,7 +25,7 @@ def show_restaurant(request, restaurant_id):
     context = {
         'restaurants': restaurants,
         'restaurant_selected': restaurant_id,
-        'dish': Dish.objects.all()
+        'dish': Dish.objects.all(),
         # 'dish': dish,
     }
     return render(request, 'gagafood/restaurant.html', context)

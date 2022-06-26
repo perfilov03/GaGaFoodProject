@@ -1,6 +1,7 @@
 from tabnanny import verbose
 from django.db import models
 from django.urls import reverse
+from django.conf.urls.static import static
 
 
 class Restaurants (models.Model):
@@ -8,7 +9,6 @@ class Restaurants (models.Model):
     category = models.ForeignKey(
         'Category', verbose_name='Категория ресторана', on_delete=models.PROTECT, null=True)
     description = models.TextField(verbose_name='О ресторане')
-    # menu = models.CharField(verbose_name='', max_length=255)
     logo = models.ImageField(verbose_name='Логотип', upload_to='restaurant')
 
     def __str__(self):
@@ -20,6 +20,7 @@ class Restaurants (models.Model):
     class Meta:
         verbose_name = 'Ресторан'
         verbose_name_plural = 'Рестораны'
+        ordering = ['title']
 
 
 class Category (models.Model):
@@ -32,3 +33,4 @@ class Category (models.Model):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории ресторанов'
+        ordering = ['id']

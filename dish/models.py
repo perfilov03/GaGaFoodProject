@@ -17,3 +17,4 @@ class Dish(models.Model):
     class Meta:
         verbose_name = 'Блюдо'
         verbose_name_plural = 'Блюда'
+        ordering = ['restaurant', 'title']
