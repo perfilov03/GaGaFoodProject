@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>j7iuhy6t</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'gagafood/images/Logo.svg' %}">
+    <link rel="stylesheet" href="{% static 'gagafood/src/css/reset.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'gagafood/src/css/style.css' %}" type="text/css">
+</head>
+<body>
+    <div class="wrapper">
+        <main class="page">
+            <section class="page__info info">
+                <div class="info__wrapper">
+                    <div class="info__crumbs crumbs">
+                        <a href="../index.html" class="crumbs__link">Главная</a> / <a href="catalogue.html" class="crumbs__link">Рестораны и кафе</a> / BUZFood
+                    </div>
+                    <div class="info__about-restaurant">
+                        <div class="info__article">
+                            <h1 class="info__title">
+                                {% for r in restaurants %}
+                                    {% if r.id == restaurant_selected %}
+                                    {{ r.title }}
+                                    {% endif%}
+                                {% endfor %}
+                                
+                            <p class="info__description">
+                                {% for r in restaurants %}
+                                    {% if r.id == restaurant_selected %}
+                                    {{ r.description }}
+                                    {% endif%}
+                                {% endfor %}
+                            </p>
+                        </div>
+                        <img src="../images/BUZFood-top.jpg" alt="Ресторан BUZFOOD на Цветном бульваре" class="info__cover">
+                    </div>
+                </div>
+            </section>
+            <section class="page__menu menu">
+                <div class="menu__wrapper">
+                    <h1 class="menu__title">Меню:</h1>
+                    <div class="menu__body">
+                        {% for d in dish %}
+                            {% if d.restaurant_id == restaurant_selected %}
+                                <div class="menu__card">
+                                    <img src="../images/malopolovin.jpg" alt="Буратта “Малополовин”" class="menu__photo">
+                                    <div class="menu__article">
+                                        <p class="menu__name">
+                                            {{ d.title }}
+                                        </p>
+                                        <p class="menu__text">{{ d.description }}</p>
+                                    </div>
+                                    <div class="menu__addition">
+                                        <p class="menu__cost">{{ d.price }} ₽</p>
+                                        <a href="" class="menu__button">В корзину</a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %} 
+                        <!-- <div class="menu__card">
+                            <img src="../images/cesar.jpg" alt="Бузцезарь" class="menu__photo">
+                            <div class="menu__article">
+                                <p class="menu__name">Бузцезарь</p>
+                                <p class="menu__text">Куриное филе, микс салат, сыр пармезан</p>
+                            </div>
+                            <div class="menu__addition">
+                                <p class="menu__cost">480 ₽</p>
+                                <a href="" class="menu__button">В корзину</a>
+                            </div>
+                        </div>
+                        <div class="menu__card">
+                            <img src="../images/hit-parad.jpg" alt="Хит-парад" class="menu__photo">
+                            <div class="menu__article">
+                                <p class="menu__name">Хит-парад</p>
+                                <p class="menu__text">Краб, томаты, апельсин, руккола, грейпфрут, соус</p>
+                            </div>
+                            <div class="menu__addition">
+                                <p class="menu__cost">390 ₽</p>
+                                <a href="" class="menu__button">В корзину</a>
+                            </div>
+                        </div>
+                        <div class="menu__card">
+                            <img src="../images/grecheskiy.jpg" alt="Греческий" class="menu__photo">
+                            <div class="menu__article">
+                                <p class="menu__name">Греческий</p>
+                                <p class="menu__text">Оливки, томаты, огурцы,  масло, тапенад</p>
+                            </div>
+                            <div class="menu__addition">
+                                <p class="menu__cost">380 ₽</p>
+                                <a href="" class="menu__button">В корзину</a>
+                            </div>
+                        </div>
+                        <div class="menu__card">
+                            <img src="../images/derevenskiy.jpg" alt="Деревенский" class="menu__photo">
+                            <div class="menu__article">
+                                <p class="menu__name">Деревенский</p>
+                                <p class="menu__text">Язык, картофель, грибы, соус</p>
+                            </div>
+                            <div class="menu__addition">
+                                <p class="menu__cost">440 ₽</p>
+                                <a href="" class="menu__button">В корзину</a>
+                            </div>
+                        </div>
+                        <div class="menu__card">
+                            <img src="../images/steyk-salad.jpg" alt="Стейк-салат с индейкой" class="menu__photo">
+                            <div class="menu__article">
+                                <p class="menu__name">Стейк-салат с индейкой</p>
+                                <p class="menu__text">Фермерская индейка, шпинат, фасоль</p>
+                            </div>
+                            <div class="menu__addition">
+                                <p class="menu__cost">450 ₽</p>
+                                <a href="" class="menu__button">В корзину</a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

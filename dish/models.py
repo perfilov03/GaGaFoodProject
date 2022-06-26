@@ -1,9 +1,11 @@
 from django.db import models
 from restaurant.models import Restaurants
 
+
 class Dish(models.Model):
     title = models.CharField(verbose_name='Название блюда', max_length=255)
-    restaurant = models.ManyToManyField(verbose_name='Ресторан', to=Restaurants, related_name='dish')
+    restaurant = models.ForeignKey(
+        Restaurants, verbose_name='Ресторан', related_name='dish', on_delete=models.PROTECT, null=True)
     description = models.TextField(verbose_name='Описание')
     cover = models.ImageField(verbose_name='Фотография', upload_to='dish')
     weight = models.IntegerField(verbose_name='Вес/количество (граммы)')

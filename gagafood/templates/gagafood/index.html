@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GaGaFood</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/Logo.svg">
-    <link rel="stylesheet" href="src/css/reset.css">
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="icon" href="{% static 'gagafood/images/Logo.svg' %}">
+    <link rel="stylesheet" href="{% static 'gagafood/src/css/reset.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'gagafood/src/css/style.css' %}" type="text/css">
 </head>
 <body>
     <div class="wrapper">
@@ -23,7 +24,7 @@
                         </div>
                         <div class="menu__box">
                             <ul class="menu__list">
-                                <li class="menu__item"><img src="images/logo.svg" alt="Logo" class="menu__logo"></li>
+                                <li class="menu__item"><img src="{% static 'gagafood/images/Logo.svg' %}" alt="Logo" class="menu__logo"></li>
                                 <li class="menu__item"><a href="#">Главная</a></li>
                                 <li class="menu__item"><a href="pages/catalogue.html">Рестораны и кафе</a></li>
                                 <li class="menu__item"><a href="#">Заказать доставку</a></li>
@@ -33,18 +34,18 @@
                         </div>
                     </div>
                     <div class="header__search">
-                        <img src="images/Search.svg" alt="Search" class="header__image">
+                        <img src="{% static 'gagafood/images/Search.svg' %} " alt="Search" class="header__image">
                     </div>
                 </div>
                 <div class="header__cover">
-                    <img src="images/logo.svg" alt="Logo" class="header__logo">
+                    <img src="{% static 'gagafood/images/Logo.svg' %}" alt="Logo" class="header__logo">
                 </div>
                 <div class="header__user-management">
                     <a class="header__icon" href="#">
-                        <img src="images/basket.svg" alt="Basket" class="header__image">
+                        <img src="{% static 'gagafood/images/basket.svg' %}" alt="Basket" class="header__image">
                     </a>
                     <a class="header__icon" href="#">
-                        <img src="images/profile.svg" alt="Profile" class="header__image">
+                        <img src="{% static 'gagafood/images/profile.svg' %}" alt="Profile" class="header__image">
                     </a>
                 </div>
             </div>
@@ -53,37 +54,37 @@
             <section class="page__classification classification">
                 <div class="classification__wrapper">
                     <a href="#" class="classification__item">
-                        <img src="images/dining.png" alt="Столовая" class="classification__photo">
+                        <img src="{% static 'gagafood/images/dining.png' %}" alt="Столовая" class="classification__photo">
                         <p class="classification__text">
                             Столовые
                         </p>
                     </a>
                     <a href="#" class="classification__item">
-                        <img src="images/fastfood.png" alt="Фастфуд" class="classification__photo">
+                        <img src="{% static 'gagafood/images/fastfood.png' %}" alt="Фастфуд" class="classification__photo">
                         <p class="classification__text">
                             Фастфуд
                         </p>
                     </a>
                     <a href="#" class="classification__item">
-                        <img src="images/pizza.png" alt="Пиццерии" class="classification__photo">
+                        <img src="{% static 'gagafood/images/pizza.png' %}" alt="Пиццерии" class="classification__photo">
                         <p class="classification__text">
                             Пиццерии
                         </p>
                     </a>
                     <a href="#" class="classification__item">
-                        <img src="images/rolls.png" alt="Азиатская кухня" class="classification__photo">
+                        <img src="{% static 'gagafood/images/rolls.png' %}" alt="Азиатская кухня" class="classification__photo">
                         <p class="classification__text">
                             Азиатская кухня
                         </p>
                     </a>
                     <a href="#" class="classification__item">
-                        <img src="images/france.png" alt="Французская кухня" class="classification__photo">
+                        <img src="{% static 'gagafood/images/france.png' %}" alt="Французская кухня" class="classification__photo">
                         <p class="classification__text">
                             Французская кухня
                         </p>
                     </a>
                     <a href="#" class="classification__item">
-                        <img src="images/coffee.png" alt="Кофейни" class="classification__photo">
+                        <img src="{% static 'gagafood/images/coffee.png' %}" alt="Кофейни" class="classification__photo">
                         <p class="classification__text">
                             Кофейни
                         </p>
@@ -95,7 +96,7 @@
                     <div class="baner__title">GaGaFood</div>
                     <div class="baner__text">Сервис доставки еды из ресторанов в Москве</div>
                     <div class="baner__wrapper-button">
-                        <a href="pages/catalogue.html" class="baner__button">
+                        <a href="{% url 'catalogue' %}" class="baner__button">
                             Перейти к выбору
                         </a>
                     </div>
@@ -108,17 +109,17 @@
                 <div class="top-restaurants__body">
                     <a class="prev" onclick="plusSlides(-1)">&#10094</a>
                     <div class="mySlides fade">
-                        <img src="images/BUZFood-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                        <img src="{% static 'gagafood/images/BUZFood-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                         <div class="top-restaurants__name">BUZFood</div>
                         <div class="top-restaurants__description">Премиальные салаты</div>
                     </div>
                     <div class="mySlides fade" id="rew">
-                        <img src="images/KFC-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                        <img src="{% static 'gagafood/images/KFC-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                         <div class="top-restaurants__name">KFC</div>
                         <div class="top-restaurants__description">Фастфуд</div>
                     </div>
                     <div class="mySlides fade" id="rewu">
-                        <img src="images/ClaudeMonet-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                        <img src="{% static 'gagafood/images/ClaudeMonet-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                         <div class="top-restaurants__name">Claude Monet</div>
                         <div class="top-restaurants__description">Французская кухня</div></a>
                     </div>
@@ -135,21 +136,21 @@
                     <div class="top-restaurants__body">
                         <div class="top-restaurants__card">
                             <a href="pages/BUZFood.html" class="top-restaurants__link">
-                                <img src="images/BUZFood-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                                <img src="{% static 'gagafood/images/BUZFood-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                                 <div class="top-restaurants__name">BUZFood</div>
                                 <div class="top-restaurants__description">Премиальные салаты</div>
                             </a>
                         </div>
                         <div class="top-restaurants__card">
                             <a href="#" class="top-restaurants__link">
-                                <img src="images/KFC-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                                <img src="{% static 'gagafood/images/KFC-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                                 <div class="top-restaurants__name">KFC</div>
                                 <div class="top-restaurants__description">Фастфуд</div>
                             </a>
                         </div>
                         <div class="top-restaurants__card">
                             <a href="#" class="top-restaurants__link">
-                                <img src="images/ClaudeMonet-top.jpg" alt="Карточка ресторана" class="top-restaurants__cover">
+                                <img src="{% static 'gagafood/images/ClaudeMonet-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                                 <div class="top-restaurants__name">Claude Monet</div>
                                 <div class="top-restaurants__description">Французская кухня</div></a>
                         </div>
@@ -203,7 +204,7 @@
         <footer class="footer">
             <div class="footer__wrapper">
                 <div class="footer__contacts contacts">
-                    <img src="images/Logo.svg" alt="Логотип" class="contacts__logo">
+                    <img src="{% static 'gagafood/images/Logo.svg' %}" alt="Логотип" class="contacts__logo">
                     <div class="contacts__article">
                         <p class="contacts__title">Контакты:</p>
                         <a href="tel:89308388696" class="contacts__telephone">8 (930) 838 86-96</a>
@@ -255,6 +256,6 @@
             </div>
         </footer>
     </div>
-    <script src="src/scripts/app.js"></script>
+    <script src="{% static 'gagafood/src/scripts/app.js' %}"></script>
 </body>
 </html>

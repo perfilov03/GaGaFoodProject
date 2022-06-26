@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог ресторанов</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="../images/Logo.svg">
-    <link rel="stylesheet" href="../src/css/reset.css">
-    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="icon" href="{% static 'gagafood/images/Logo.svg' %}">
+    <link rel="stylesheet" href="{% static 'gagafood/src/css/reset.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'gagafood/src/css/style.css' %}" type="text/css">
 </head>
 <body>
     <div class="wrapper">
@@ -36,12 +37,12 @@
                                     <!-- <h2 class="catalogue__name">BUZFood</h2>
                                     <p class="catalogue__text">Премиальные салаты</p> -->
                                     <h2 class="catalogue__name">{{r.title}}</h2>
-                                    <p class="catalogue__text">{{r.description}}</p>
+                                    <p class="catalogue__text">{{r.category}}</p>
                                 </div>
-                                <a href="BUZFood.html" class="catalogue__button">Выбрать</a>
+                                <a href="{{r.get_absolute_url}}" class="catalogue__button">Выбрать</a>
                             </div>
                         </div>
-                        {% endfor %}
+                        {% endfor %} 
                         <!-- <div class="catalogue__card">
                             <img src="../images/KFC.jpg" alt="KFC" class="catalogue__photo">
                             <div class="catalogue__description">
