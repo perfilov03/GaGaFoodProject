@@ -1,0 +1,85 @@
+.page__baner {
+    background-image: url('../../images/baner.png');
+    background-color: #A2CDF3;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    height: 500px;
+    width: 100%;
+}
+.baner__wrapper {
+    @extend %wrapper;
+    padding-top: 71px;
+    padding-left: 61px;
+    display: flex;
+    flex-direction: column;
+}
+.baner__title {
+    font-weight: 700;
+    color: $violet-cl;
+    font-size: 3.125rem;
+}
+.baner__text {
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.75rem;
+    margin-top: 43px;
+    max-width: 390px;
+}
+.baner__wrapper-button {
+    margin-top: 43px;
+    
+}
+.baner__button {
+    font-weight: 600;
+    color: $violet-cl;
+    font-size: 1.6rem;
+    padding: 5px 10px;
+    border: $violet-cl 3px solid;
+    &:hover {
+        color: $pink-cl;
+        border: $pink-cl 3px solid;
+    }
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .baner__title {
+        font-size: 2.825rem;
+    }
+    .baner__text {
+        font-size: 1.35rem;
+        max-width: 310px;
+    }
+    .baner__button {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .page__baner {
+        height: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    .page__baner {
+        height: 300px;
+    }
+    .baner__wrapper {
+        padding-top: 41px;
+        padding-left: 62px;
+    }
+    .baner__title {
+        font-size: 2.225rem;
+    }
+    .baner__text {
+        font-size: 1.05rem;
+        max-width: 250px;
+        margin-top: 20px;
+    }
+    .baner__button {
+        font-size: 1.1rem;
+        margin-top: 20px;
+    }
+}

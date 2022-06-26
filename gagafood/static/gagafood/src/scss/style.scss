@@ -1,0 +1,36 @@
+// @use "_header.scss" as stl;
+
+$violet-cl: #AE1DC6;
+$pink-cl: #D137A6;
+
+%buttonss {
+  display: flex;
+  background-color: $pink-cl;
+  padding: 10px 25px;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.2px;
+  font-weight: 600;
+  line-height: 150%;
+  text-align: center;
+  color: #FFFFFF;
+} //шаблон для кнопок
+%wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+%hover {
+  color: #213452;
+  text-decoration: underline;
+}
+
+
+@import "_fonts.scss";
+@import "_header.scss";
+@import "_classification.scss";
+@import "_baner.scss";
+@import "_top-restaurants.scss";
+@import "_text-block.scss";
+@import "_footer.scss";
+@import "_catalogue.scss";
+@import "_card-restaurant.scss";

@@ -1,0 +1,155 @@
+.header {
+    width: 100%;
+    background-color: $violet-cl;
+    height: 73px;
+}
+.header__wrapper {
+    @extend %wrapper;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 73px;
+}
+.header__navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.header__menu {
+    padding: 0 15px;
+}
+.menu {
+}
+.menu__burger {
+    cursor: pointer;
+    width: 40px;
+	height: 45px;
+	position: relative;
+	z-index: 12;
+	overflow: hidden;
+    span {
+        width: 40px;
+        height: 5px;
+        position: absolute;
+        top: 17%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #222222;
+        transition: all 0.5s;
+        &:nth-of-type(2) {
+            top: calc(50% - 5px);
+        }
+        &:nth-of-type(3) {
+            top: calc(50% + 5px);
+        }
+    }
+    &.active span:nth-of-type(1) {
+        display: none;
+    }
+    &.active span:nth-of-type(2) {
+        top: 50%;
+        transform: translate(-50%, 0%) rotate(45deg);  
+    }
+    &.active span:nth-of-type(3) {
+        top: 50%;
+        transform: translate(-50%, 0%) rotate(-45deg); 
+    }
+}
+.menu__box {
+    z-index: 10;
+    position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+    background-color: $violet-cl;
+	transform: translateX(-100%);
+	transition: transform 0.5s;
+    &.active {
+        transform: translateX(0);
+    }
+    li {
+        list-style-type: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu__item {
+    margin-top: 30px;
+    a {
+        color: #FFFFFF;
+        font-weight: 500;
+        font-size: 2rem;
+        &:hover {
+            @extend %hover;
+        }
+    }
+}
+.header__search {
+    padding: 0 15px;
+    height: 39px;
+}
+.header__logo {
+    width: 93px;
+    height: 63px;
+}
+.menu__logo {
+    width: 130px;
+    height: auto;
+}
+.header__user-management {
+    display: flex;
+    flex-direction: row;
+    padding: 0 15px;
+    flex-wrap: nowrap;
+}
+.header__icon {
+    padding: 0 15px;
+}
+
+@media (max-width: 600px) {
+    .header__image {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 650px) {
+    .header__image {
+        width: auto;
+        height: 30px;
+    }
+    .header__logo {
+        width: 93px;
+        height: 63px;
+    }
+    .header__search {
+        // padding: 0 15px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 380px) {
+    .header__image {
+        width: auto;
+        height: 20px;
+    }
+    .header__logo {
+        width: 70px;
+        height: 47px;
+    }
+    .header__search {
+        // padding: 0 15px;
+        height: 20px;
+    }
+    .header__user-management {
+        padding: 0 5px;
+    }
+}
+
+.fixed {
+    position: fixed;
+}

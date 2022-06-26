@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  max-width: 100%;
+  min-width: 300px;
+  margin: 0 auto;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+// li {
+//   list-style-type: none;
+// }
+a {
+  text-decoration: none;
+}
+.visually-hidden {
+  // position: absolute;
+  // clip: rect(0, 0, 0, 0);
+  // width: 1px;
+  // height: 1px;
+  // margin: -1px;
+  opacity: 0;
+  cursor :default;
+}
+:root {
+    font-size: 13px;
+}
+button,
+input {
+  overflow: visible;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #000000;
+}
