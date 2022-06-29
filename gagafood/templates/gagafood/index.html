@@ -44,9 +44,15 @@
                     <a class="header__icon" href="#">
                         <img src="{% static 'gagafood/images/basket.svg' %}" alt="Basket" class="header__image">
                     </a>
-                    <a class="header__icon" href="#">
+                    {% if authentication.is_authenticated %}
+                    <a class="header__icon" href="{% url 'profile' %}">
                         <img src="{% static 'gagafood/images/profile.svg' %}" alt="Profile" class="header__image">
                     </a>
+                    {% else %}
+                    <a class="header__icon" href="{% url 'login' %}">
+                        <img src="{% static 'gagafood/images/profile.svg' %}" alt="Profile" class="header__image">
+                    </a>
+                    {% endif %}
                 </div>
             </div>
         </header>
@@ -103,7 +109,6 @@
                 </div>
             </section>
             <section class="page__top-restaurants top-restaurants">
-            
             <div class="slideshow-container top-restaurants__wrapper_min">
                 <h2 class="top-restaurants__title">Лучшие рестораны</h2>
                 <div class="top-restaurants__body">
@@ -135,7 +140,7 @@
                     <h2 class="top-restaurants__title">Лучшие рестораны</h2>
                     <div class="top-restaurants__body">
                         <div class="top-restaurants__card">
-                            <a href="pages/BUZFood.html" class="top-restaurants__link">
+                            <a href="" class="top-restaurants__link">
                                 <img src="{% static 'gagafood/images/BUZFood-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                                 <div class="top-restaurants__name">BUZFood</div>
                                 <div class="top-restaurants__description">Премиальные салаты</div>
@@ -199,6 +204,24 @@
                             подойдет именно вам.</p>
                     </article>
                 </div>
+            </section>
+            <section class="page__feedback feedback">
+                <form action="{% url 'home' %}" method="POST" class="feedback__form">
+                    {% csrf_token %}
+                    {% for f in form %}
+                    <p>
+                        <label for="{{f.id_for_label}}" class="feedback__label">{{f.label}}:</label>
+                        {{f}}
+                    </p>
+                    <div class="feedback__errors">
+                        {{f.errors}}
+                    </div>
+                    {% endfor %}
+                    
+                    <button class="feedback__submit">
+                        Оставить заявку
+                    </button>
+                </form>
             </section>
         </main>
         <footer class="footer">
