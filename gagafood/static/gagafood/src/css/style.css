@@ -1,4 +1,4 @@
-.menu__button, .catalogue__button {
+.feedback__submit, .menu__button, .catalogue__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,7 +17,7 @@
   color: #FFFFFF;
 }
 
-.info__wrapper, .menu__wrapper, .catalogue__wrapper, .footer__wrapper, .text-block__wrapper, .top-restaurants__wrapper, .baner__wrapper, .classification__wrapper, .header__wrapper {
+.feedback__wrapper, .info__wrapper, .menu__wrapper, .catalogue__wrapper, .footer__wrapper, .text-block__wrapper, .top-restaurants__wrapper, .baner__wrapper, .classification__wrapper, .header__wrapper {
   max-width: 1120px;
   margin: 0 auto;
 }
@@ -1403,5 +1403,107 @@ slideshow-container {
 
   .info__article {
     margin-bottom: 25px;
+  }
+}
+.page__feedback {
+  background-color: #A8CCEE;
+}
+
+.feedback__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px 15px 0 15px;
+}
+
+.feedback__title {
+  color: #AE1DC6;
+  font-weight: 600;
+  font-size: 1.875rem;
+  margin-bottom: 45px;
+  max-width: 800px;
+}
+
+.feedback__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.feedback__fielder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 600px;
+}
+
+.feedback__label {
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 17px;
+}
+
+.feedback__input {
+  margin-bottom: 22px;
+  height: 40px;
+  border: 2px solid #FF00CC;
+  border-radius: 30px;
+  padding-left: 20px;
+}
+.feedback__input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.feedback__input:focus::-moz-placeholder {
+  color: transparent;
+}
+.feedback__input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.feedback__input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+.feedback__input:focus::placeholder {
+  color: transparent;
+}
+
+.feedback__button {
+  margin: 10px 0 60px 0px;
+}
+
+.feedback__submit {
+  border: none;
+  outline: none;
+  font-weight: 1.1rem;
+}
+
+@media (max-width: 776px) {
+  .feedback__title {
+    font-size: 1.675rem;
+  }
+
+  .feedback__label {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 526px) {
+  .feedback__title {
+    font-size: 1.475rem;
+  }
+
+  .feedback__label {
+    font-size: 1.2rem;
   }
 }

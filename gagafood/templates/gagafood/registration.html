@@ -13,8 +13,21 @@
 </head>
 <body>
     <main class="registration">
-        <form action="POST" class="registration__form">
-            
+        <form method="POST" class="registration__form">
+            {% csrf_token%}
+            {% for f in form %}
+            <div class="registration__fielder">
+                <label for="{{f.id_for_label}}" class="registration__label">{{f.label}}:</label>
+                {{f}}
+            </div>
+            <div class="registration__errors">
+                {{f.errors}}
+            </div>
+            {% endfor %}
+
+            <button class="registration__submit">
+                Зарегистрироваться
+            </button>
         </form>
     </main>
 </body>

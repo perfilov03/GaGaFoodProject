@@ -17,10 +17,22 @@
         {% if form.errors %}
         <p>{{ form.errors.error }}</p>
         {% endif %}
-        <form action="{% url 'login' %}" class="authorization__form">
-            {{ form }}
+        <form method="post" class="authorization__form">
             {% csrf_token %}
-            <button type="submit" class="authorization__button">Войти</button>
+            {% for f in form %}
+            <div class=authorization__fielder">
+                <label for="{{f.id_for_label}}" class="authorization__label">{{f.label}}:</label>
+                {{f}}
+            </div>
+            <div class="authorization__errors">
+                {{f.errors}}
+            </div>
+            {% endfor %}
+            <div class="authorization__button">
+                <button type="submit" class="authorization__login">Войти</button>
+                <a href="{% url 'registration' %}">Зарегистрируйся</a>
+                
+            </div>
         </form>
     </main>
 </body>

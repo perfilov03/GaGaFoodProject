@@ -23,6 +23,9 @@ $pink-cl: #D137A6;
   color: #213452;
   text-decoration: underline;
 }
+%input {
+
+}
 
 
 @import "_fonts.scss";
@@ -35,3 +38,4 @@ $pink-cl: #D137A6;
 @import "_catalogue.scss";
 @import "_card-restaurant.scss";
 @import "_authorization.scss";
+@import "_feedback.scss";

@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{% static 'gagafood/src/css/style.css' %}" type="text/css">
 </head>
 <body>
-    
+    {{ user.email }}
+    <a href="{% url 'logout' %}" class="profile__logout">
+        Выйти
+    </a>
 </body>
 </html>
