@@ -32,14 +32,7 @@
     margin-bottom: 17px;
 }
 .feedback__input {
-    margin-bottom: 22px;
-    height: 40px;
-    border: 2px solid #FF00CC;
-    border-radius: 30px;
-    padding-left: 20px;
-    &:focus::placeholder {
-        color: transparent;
-    }
+    @extend %input;
 }
 .feedback__errors {
 }

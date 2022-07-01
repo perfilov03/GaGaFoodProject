@@ -1,8 +1,8 @@
-.feedback__submit, .menu__button, .catalogue__button {
+.registration__submit, .feedback__submit, .menu__button, .catalogue__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #D137A6;
+  background-color: #FF0066;
   padding: 10px 25px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -17,7 +17,7 @@
   color: #FFFFFF;
 }
 
-.feedback__wrapper, .info__wrapper, .menu__wrapper, .catalogue__wrapper, .footer__wrapper, .text-block__wrapper, .top-restaurants__wrapper, .baner__wrapper, .classification__wrapper, .header__wrapper {
+.registration__wrapper, .feedback__wrapper, .info__wrapper, .menu__wrapper, .catalogue__wrapper, .footer__wrapper, .text-block__wrapper, .top-restaurants__wrapper, .baner__wrapper, .classification__wrapper, .header__wrapper {
   max-width: 1120px;
   margin: 0 auto;
 }
@@ -25,6 +25,29 @@
 .crumbs__link:hover, .map__item a:hover, .menu__item a:hover {
   color: #213452;
   text-decoration: underline;
+}
+
+.registration__input, .feedback__input {
+  margin-bottom: 22px;
+  height: 40px;
+  border: 2px solid #FF00CC;
+  border-radius: 30px;
+  padding-left: 20px;
+}
+.registration__input:focus::-webkit-input-placeholder, .feedback__input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.registration__input:focus::-moz-placeholder, .feedback__input:focus::-moz-placeholder {
+  color: transparent;
+}
+.registration__input:focus:-ms-input-placeholder, .feedback__input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.registration__input:focus::-ms-input-placeholder, .feedback__input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+.registration__input:focus::placeholder, .feedback__input:focus::placeholder {
+  color: transparent;
 }
 
 * {
@@ -1456,29 +1479,6 @@ slideshow-container {
   margin-bottom: 17px;
 }
 
-.feedback__input {
-  margin-bottom: 22px;
-  height: 40px;
-  border: 2px solid #FF00CC;
-  border-radius: 30px;
-  padding-left: 20px;
-}
-.feedback__input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-.feedback__input:focus::-moz-placeholder {
-  color: transparent;
-}
-.feedback__input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-.feedback__input:focus::-ms-input-placeholder {
-  color: transparent;
-}
-.feedback__input:focus::placeholder {
-  color: transparent;
-}
-
 .feedback__button {
   margin: 10px 0 60px 0px;
 }
@@ -1505,5 +1505,206 @@ slideshow-container {
 
   .feedback__label {
     font-size: 1.2rem;
+  }
+}
+body {
+  background-color: #F3F3F3;
+}
+
+.registration__crumbs {
+  margin-bottom: 20px;
+}
+
+.registration__wrapper {
+  padding: 0 20px;
+}
+
+.registration__title {
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.registration__form-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.registration__form {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 0 50px 0;
+  max-width: 600px;
+  width: 100%;
+  margin: 0px 30px 50px 30px;
+}
+
+.registration__fieldset {
+  width: 73%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.registration__fielder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0 20px;
+  width: 100%;
+}
+
+.registration__subtitle {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.registration__label {
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.registration__input {
+  max-width: 350px;
+  width: 100%;
+  height: 33px;
+}
+
+.registration__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.registration__submit {
+  border: none;
+  outline: none;
+  margin-right: 15px;
+  font-size: 1rem;
+  padding: 7px 20px;
+}
+
+.registration__link {
+  color: #000000;
+}
+
+.registration__login {
+  color: #FF00CC;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .registration__title {
+    font-size: 2.2rem;
+  }
+
+  .registration__subtitle {
+    font-size: 1.7rem;
+  }
+
+  .registration__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .registration__fielder {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .registration__submit {
+    margin-bottom: 15px;
+  }
+
+  .registration__label {
+    margin-bottom: 10px;
+  }
+
+  .registration__input {
+    width: 90%;
+  }
+
+  .registration__fieldset {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 550px) {
+  .registration__title {
+    font-size: 2rem;
+  }
+
+  .registration__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .registration__submit {
+    font-size: 0.9rem;
+  }
+
+  .registration__link {
+    font-size: 0.9rem;
   }
 }

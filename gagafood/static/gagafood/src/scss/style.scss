@@ -5,7 +5,7 @@ $pink-cl: #D137A6;
 
 %buttonss {
   display: flex;
-  background-color: $pink-cl;
+  background-color: #FF0066;
   padding: 10px 25px;
   justify-content: center;
   align-items: center;
@@ -24,7 +24,14 @@ $pink-cl: #D137A6;
   text-decoration: underline;
 }
 %input {
-
+  margin-bottom: 22px;
+  height: 40px;
+  border: 2px solid #FF00CC;
+  border-radius: 30px;
+  padding-left: 20px;
+  &:focus::placeholder {
+      color: transparent;
+  }
 }
 
 
@@ -39,3 +46,4 @@ $pink-cl: #D137A6;
 @import "_card-restaurant.scss";
 @import "_authorization.scss";
 @import "_feedback.scss";
+@import "_registration.scss";

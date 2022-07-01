@@ -1,3 +1,4 @@
+from cProfile import label
 from dataclasses import field
 from django import forms
 from .models import *
@@ -13,23 +14,30 @@ class AddFeedback(forms.Form):
 
 
 class RegisterUserForm(UserCreationForm):
-    password1 = forms.CharField(label="Придумайте пароль:", widget=forms.TextInput(
+    password1 = forms.CharField(label="Придумайте пароль", widget=forms.TextInput(
         attrs={'class': 'registration__input', 'type': 'password'}))
-    password2 = forms.CharField(label="Подтвердите пароль:", widget=forms.TextInput(
+    password2 = forms.CharField(label="Подтвердите пароль", widget=forms.TextInput(
         attrs={'class': 'registration__input', 'type': 'password'}))
+    first_name = forms.CharField(label="Ваше имя", widget=forms.TextInput(
+        attrs={'class': 'registration__input',
+               'placeholder': 'Анастасия'}))
+    email = forms.CharField(label="Электронная почта", widget=forms.TextInput(
+        attrs={'class': 'registration__input', 'placeholder': 'lady@gaga.com'}))
+    telephone = forms.CharField(label="Номер телефона", widget=forms.TextInput(
+        attrs={'class': 'registration__input', 'placeholder': '+7 (999) 999 99-99'}))
 
     class Meta:
         model = User
         fields = ('first_name', 'telephone',
                   'email')
-        #  'password1', 'password2'
         widgets = {
-            'username': forms.TextInput(
-                attrs={'class': 'registration__input', 'placeholder': 'Анастасия'}),
-            'last_name': forms.TextInput(
-                attrs={'class': 'registration__input', 'placeholder': 'Анастасия'}),
+            'first_name': forms.TextInput(
+                attrs={'class': 'registration__input',
+                       'placeholder': 'Анастасия'}),
+            'email': forms.TextInput(
+                attrs={'class': 'registration__input', 'placeholder': 'lady@gaga.com'}),
             'telephone': forms.TextInput(
-                attrs={'class': 'registration__input', 'placeholder': 'Анастасия'}),
+                attrs={'class': 'registration__input', 'placeholder': '+7 (999) 999 99-99'}),
         }
 
 
