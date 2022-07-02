@@ -33,6 +33,7 @@
 }
 .feedback__input {
     @extend %input;
+    margin-bottom: 22px;
 }
 .feedback__errors {
 }

@@ -27,9 +27,11 @@
                         <div class="registration__fielder">
                             <label for="{{f.id_for_label}}" class="registration__label">{{f.label}}:</label>
                             {{f}}
-                        </div>
-                        <div class="registration__errors">
-                            {{f.errors}}
+                            {% if f.errors %}
+                                <p class="registration__errors">
+                                    {{f.errors}}
+                                </p>
+                            {% endif %}
                         </div>
                         {% endfor %}
                     </fieldset>

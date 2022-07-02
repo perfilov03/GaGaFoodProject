@@ -24,7 +24,7 @@ $pink-cl: #D137A6;
   text-decoration: underline;
 }
 %input {
-  margin-bottom: 22px;
+  
   height: 40px;
   border: 2px solid #FF00CC;
   border-radius: 30px;
@@ -44,6 +44,5 @@ $pink-cl: #D137A6;
 @import "_footer.scss";
 @import "_catalogue.scss";
 @import "_card-restaurant.scss";
-@import "_authorization.scss";
 @import "_feedback.scss";
 @import "_registration.scss";
