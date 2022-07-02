@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GaGaFood</title>
+    <title>{{ title }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="{% static 'gagafood/images/Logo.svg' %}">
     <link rel="stylesheet" href="{% static 'gagafood/src/css/reset.css' %}" type="text/css">
@@ -13,9 +13,40 @@
 </head>
 <body>
     <main class="registration">
-        <form action="POST" class="registration__form">
-            
-        </form>
+        <div class="registration__wrapper">
+            <div class="registration__crumbs crumbs">
+                <a href="{% url 'home' %}" class="crumbs__link"> < Назад </a> 
+            </div>
+            <h1 class="registration__title">Войти в профиль</h1>
+            <div class="registration__form-wrapper">
+                <form method="POST" class="registration__form">
+                    <h2 class="registration__subtitle">Регистрация</h2>
+                    <fieldset class="registration__fieldset">
+                        {% csrf_token%}
+                        {% for f in form %}
+                        <div class="registration__fielder">
+                            <label for="{{f.id_for_label}}" class="registration__label">{{f.label}}:</label>
+                            {{f}}
+                            {% if f.errors %}
+                                <p class="registration__errors">
+                                    {{f.errors}}
+                                </p>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </fieldset>
+                    <div class="registration__button">
+                        <button class="registration__submit">
+                            Зарегистрироваться
+                        </button>
+                        <div class="registration__link">
+                            Уже есть аккаунт? 
+                            <a class="registration__login" href="{% url 'login' %}">Авторизируйся</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
 </body>
 </html>

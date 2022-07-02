@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'basket',
     'gagafood',
     'feedback',
+    'discount_coupons',
 ]
 
 MIDDLEWARE = [

@@ -44,7 +44,7 @@
                     <a class="header__icon" href="#">
                         <img src="{% static 'gagafood/images/basket.svg' %}" alt="Basket" class="header__image">
                     </a>
-                    {% if authentication.is_authenticated %}
+                    {% if request.user.is_authenticated %}
                     <a class="header__icon" href="{% url 'profile' %}">
                         <img src="{% static 'gagafood/images/profile.svg' %}" alt="Profile" class="header__image">
                     </a>
@@ -206,22 +206,28 @@
                 </div>
             </section>
             <section class="page__feedback feedback">
-                <form action="{% url 'home' %}" method="POST" class="feedback__form">
-                    {% csrf_token %}
-                    {% for f in form %}
-                    <p>
-                        <label for="{{f.id_for_label}}" class="feedback__label">{{f.label}}:</label>
-                        {{f}}
-                    </p>
-                    <div class="feedback__errors">
-                        {{f.errors}}
-                    </div>
-                    {% endfor %}
-                    
-                    <button class="feedback__submit">
-                        Оставить заявку
-                    </button>
-                </form>
+                <div class="feedback__wrapper">
+                    <h2 class="feedback__title">
+                        Нужна помощь? Оставьте нам свои контакты и мы обязательно вам перезвоним! 
+                    </h2>
+                    <form action="{% url 'home' %}" method="POST" class="feedback__form">
+                        {% csrf_token %}
+                        {% for f in form %}
+                        <div class="feedback__fielder">
+                            <label for="{{f.id_for_label}}" class="feedback__label">{{f.label}}:</label>
+                            {{f}}
+                        </div>
+                        <div class="feedback__errors">
+                            {{f.errors}}
+                        </div>
+                        {% endfor %}
+                        <div class="feedback__button">
+                            <button class="feedback__submit">
+                            Оставить заявку
+                        </button>
+                        </div>
+                    </form>
+                </div>
             </section>
         </main>
         <footer class="footer">

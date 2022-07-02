@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
-
 from authentication.managers import UserManager
 
 
@@ -11,13 +10,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(verbose_name='Фамилия', max_length=255)
     telephone = models.CharField(verbose_name='Номер телефона', max_length=255)
     address = models.CharField(verbose_name='Адрес', max_length=255)
-
-    is_active = models.BooleanField(verbose_name='Активирован', default=False)
+    is_active = models.BooleanField(verbose_name='Активирован', default=True)
     is_staff = models.BooleanField(verbose_name='Персонал', default=False)
-    is_superuser = models.BooleanField(verbose_name='Администратор', default=False)
+    is_superuser = models.BooleanField(
+        verbose_name='Администратор', default=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'telephone']
+    REQUIRED_FIELDS = ['first_name', 'telephone']
 
     objects = UserManager()
 
@@ -27,3 +26,4 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
+        ordering = ['id']

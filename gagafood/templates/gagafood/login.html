@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GaGaFood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'gagafood/images/Logo.svg' %}">
+    <link rel="stylesheet" href="{% static 'gagafood/src/css/reset.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'gagafood/src/css/style.css' %}" type="text/css">
+</head>
+<body>
+    <main class="authorization">
+        <div class="authorization__wrapper">
+            <div class="authorization__crumbs crumbs">
+                <a href="{% url 'home' %}" class="crumbs__link"> < Назад </a> 
+            </div>
+            <h1 class="authorization__title">Войти в профиль</h1>
+            <div class="authorization__form-wrapper">
+                <form method="post" class="authorization__form">
+                    <h2 class="authorization__subtitle">Вход</h2>
+                    <fieldset class="authorization__fieldset">
+                        {% csrf_token %}
+                        {% for f in form %}
+                        <div class="authorization__fielder">
+                            <label for="{{f.id_for_label}}" class="authorization__label">{{f.label}}:</label>
+                            {{f}}
+                        </div>
+                        {% endfor %}
+                    </fieldset>
+                    <div class="authorization__button">
+                        <button type="submit" class="authorization__login">Войти</button>
+                        <div class="authorization__link">
+                            Нет аккаунта? <a class="authorization__registration" href="{% url 'registration' %}">Зарегистрируйся</a>
+                        </div>
+                    </div>
+                    <div class="authorization__errors">{{ form.non_field_errors}}</div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

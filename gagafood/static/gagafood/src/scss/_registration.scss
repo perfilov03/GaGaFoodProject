@@ -1,0 +1,143 @@
+body {
+    background-color: #F3F3F3;
+}
+.registration {
+}
+.crumbs {
+    margin-bottom: 20px;
+}
+.registration__wrapper, .authorization__wrapper {
+    @extend %wrapper;
+    padding: 0 20px;
+    
+}
+.registration__title, .authorization__title {
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 40px;
+}
+.registration__form-wrapper, .authorization__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.registration__form, .authorization__form {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 50px 0;
+    max-width: 600px;
+    width: 100%;
+    margin: 0px 30px 50px 30px;
+}
+.registration__fieldset, .authorization__fieldset {
+    width: 73%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.registration__fielder, .authorization__fielder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 20px;
+    width: 100%;
+    margin-bottom: 22px;
+}
+.registration__subtitle, .authorization__subtitle {
+    font-weight: 600;
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 40px;
+}
+.registration__label, .authorization__label {
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.registration__input, .authorization__input {
+    @extend %input;
+    max-width: 350px;
+    width: 100%;
+    height: 33px;
+}
+.errorlist {
+    margin-top: 10px;
+    // margin-bottom: 5px;
+    list-style-type: none;
+    li {
+        color: red;
+    }
+}
+.registration__button, .authorization__button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.registration__submit, .authorization__login {
+    border: none;
+    outline: none;
+    @extend %buttonss;
+    margin-right: 15px;
+    font-size: 1rem;
+    padding: 7px 20px;
+}
+
+.registration__link, .authorization__link {
+    color: #000000;
+}
+.registration__login, .authorization__registration {
+    color: #FF00CC;
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .registration__title, .authorization__title {
+        font-size: 2.2rem;
+    }
+    .registration__subtitle, .authorization__subtitle {
+        font-size: 1.7rem;
+    }
+    .registration__button, .authorization__button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registration__fielder, .authorization__fielder {
+        align-items: center;
+    }
+    .registration__submit, .authorization__login {
+        margin-bottom: 15px;
+    }
+    .registration__label, .authorization__label {
+        margin-bottom: 10px;
+    }
+    .registration__input, .authorization__input {
+        width: 90%;
+    }
+    .registration__fieldset, .authorization__fieldset {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .registration__title, .authorization__title {
+        font-size: 2rem;
+    }
+    .registration__subtitle, .authorization__subtitle {
+        font-size: 1.5rem;
+    }
+    .registration__submit, .authorization__login {
+        font-size: 0.9rem;
+    }
+    .registration__link, .authorization__link {
+        font-size: 0.9rem;
+    }
+}
