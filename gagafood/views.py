@@ -12,6 +12,7 @@ from django.views.generic import CreateView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import logout, login
+from discount_coupons.models import Coupons
 
 
 def index(request):
@@ -84,11 +85,17 @@ class LoginUser(DataMixin, LoginView):
         return context
 
     def get_success_url(self):
-        return reverse_lazy('home')
+        return reverse_lazy('profile')
 
 
 def profile(request):
-    return render(request, 'gagafood/profile.html')
+    coupons = Coupons.objects.all()
+    context = {
+        'title': 'Профиль',
+        'coupons': coupons,
+    }
+
+    return render(request, 'gagafood/profile.html', context=context)
 
 
 def logout_user(request):

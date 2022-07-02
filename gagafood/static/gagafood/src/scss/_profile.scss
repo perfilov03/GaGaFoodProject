@@ -1,0 +1,149 @@
+.profile {
+}
+.profile__wrapper {
+    @extend %wrapper;
+    padding: 0 20px;
+}
+.crumbs__link {
+}
+.profile__head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.profile__title {
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: #000000;
+}
+.profile__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.profile__username {
+    font-weight: 500;
+    font-size: 1.56rem;
+    color: #A8CCEE;
+    text-decoration: underline
+}
+.profile__logout {
+    @extend %buttonss;
+    margin-left: 20px;
+    padding: 5px 20px;
+    font-size: 1.1rem;
+}
+.profile__user-data, .profile__discounts  {
+    margin-bottom: 40px;
+}
+.user-data {
+}
+.user-data__wrapper, .discounts__wrapper {
+    background-color: #fff;
+    padding-left: 30px;
+    padding: 20px 30px 60px 40px;
+}
+.user-data__title, .discounts__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+.user-data__form {
+    padding-left: 15px;
+}
+.user-data__fielder {
+    span {
+        background-color: #000000;
+        height: 1px;
+        max-width: 600px;
+        width: 70%;
+        position: absolute;
+        margin-bottom: 5px;
+    }
+}
+.user-data__label {
+    font-weight: 400;
+    font-size: 1.225rem;
+    margin-bottom: 7px;
+    margin-top: 20px;
+}
+.user-data__value {
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-bottom: 3px;
+}
+.discounts {
+}
+.discounts__wrapper {
+}
+.discounts__title {
+}
+.discounts__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+.discounts__card {
+    background-color: #F3F3F3;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 25px 40px 25px;
+    margin: 30px 20px;
+}
+.discounts__name {
+    font-weight: 500;
+    font-size: 1.625rem;
+    margin-bottom: 40px;
+}
+.discounts__button {
+}
+.discounts__use {
+    @extend %buttonss;
+    padding: 7px 25px;
+}
+
+@media (max-width: 900px) {
+    .discounts__card {
+        width: 40%;
+    }
+}
+
+@media (max-width: 675px) {
+    .profile__head {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 40px;
+    }
+    .profile__title {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 620px) {
+    .discounts__card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .user-data__form {
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .profile__logout {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+}

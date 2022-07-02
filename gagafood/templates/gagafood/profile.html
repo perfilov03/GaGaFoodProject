@@ -5,16 +5,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>{{title}}</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="{% static 'gagafood/images/Logo.svg' %}">
     <link rel="stylesheet" href="{% static 'gagafood/src/css/reset.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'gagafood/src/css/style.css' %}" type="text/css">
 </head>
 <body>
-    {{ user.email }}
-    <a href="{% url 'logout' %}" class="profile__logout">
-        Выйти
-    </a>
+    <div class="wrapper">
+
+    </div>
+    <main class="profile">
+        <div class="profile__wrapper">
+            <div class="profile__crumbs crumbs">
+                <a href="{% url 'home' %}" class="crumbs__link"> < На главную </a> 
+            </div>
+            <div class="profile__head">
+                <h1 class="profile__title">
+                    Личный кабинет
+                </h1>
+                <div class="profile__buttons">
+                    <p class="profile__username">
+                        {{ user.email }}
+                    </p>
+                    <div class="profile__button">
+                        <a href="{% url 'logout' %}" class="profile__logout">
+                            Выйти
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            <section class="profile__user-data user-data">
+                <div class="user-data__wrapper">
+                    <h2 class="user-data__title">
+                        Данные пользователя
+                    </h2>
+                    <div class="user-data__form">
+                        <div class="user-data__fielder">
+                            <p class="user-data__label">Имя</p>
+                            {% if user.first_name %}
+                                <p class="user-data__value">{{user.first_name}}</p>
+                            {% else %}
+                                <p class="profile__username">
+                                    Данные отсутствуют
+                                </p>
+                            {% endif %}
+                            <span></span>
+                        </div>
+                        <div class="user-data__fielder">
+                            <p class="user-data__label">Фамилия</p>
+                            {% if user.last_name %}
+                                <p class="user-data__value">{{user.last_name}}</p>
+                            {% else %}
+                                <p class="profile__label visually-hidden">
+                                    Данные отсутствуют
+                                </p>
+                            {% endif %}
+                            <span></span>
+                        </div>
+                        <div class="user-data__fielder">
+                            <p class="user-data__label">Электронная почта</p>
+                            {% if user.email %}
+                            <p class="user-data__value">{{user.email}}</p>
+                            {% else %}
+                                <p class="profile__label visually-hidden">
+                                    Данные отсутствуют
+                                </p>
+                            {% endif %}
+                            <span></span>
+                        </div>
+                        <div class="user-data__fielder">
+                            <p class="user-data__label">Номер телефона</p>
+                            {% if user.telephone %}
+                                <p class="user-data__value">{{user.telephone}}</p>
+                            {% else %}
+                                <p class="profile__label visually-hidden">
+                                    Данные отсутствуют
+                                </p>
+                            {% endif %}
+                            <span></span>
+                        </div>
+                        <div class="user-data__fielder">
+                            <p class="user-data__label">Адрес доставки</p>
+                            {% if user.address %}
+                                <p class="user-data__value">{{user.address}}</p>
+                            {% else %}
+                                <p class="profile__label visually-hidden">
+                                    Данные отсутствуют
+                                </p>
+                            {% endif %}
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="profile__discounts discounts">
+                <div class="discounts__wrapper">
+                    <h2 class="discounts__title">
+                        Скидки
+                    </h2>
+                    <div class="discounts__body">
+                        {% for c in coupons %}
+                        <div class="discounts__card">
+                            <p class="discounts__name">
+                                {{ c.title }}
+                            </p>
+                            <div class="discounts__button">
+                                <a href="" class="discounts__use">
+                                    Воспользоваться
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 </body>
 </html>
