@@ -26,6 +26,8 @@ class Restaurants (models.Model):
 class Category (models.Model):
     name = models.CharField(
         verbose_name='Название категории', max_length=100, db_index=True)
+    logo = models.ImageField(verbose_name='Логотип',
+                             upload_to='filters', null=True)
 
     def __str__(self):
         return self.name

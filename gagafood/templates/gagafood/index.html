@@ -41,7 +41,7 @@
                     <img src="{% static 'gagafood/images/Logo.svg' %}" alt="Logo" class="header__logo">
                 </div>
                 <div class="header__user-management">
-                    <a class="header__icon" href="#">
+                    <a class="header__icon" href="{% url 'basket' %}">
                         <img src="{% static 'gagafood/images/basket.svg' %}" alt="Basket" class="header__image">
                     </a>
                     {% if request.user.is_authenticated %}
@@ -58,8 +58,17 @@
         </header>
         <main class="page">
             <section class="page__classification classification">
+                <h2 class="visible__hidden">Категории ресторанов:</h2>
                 <div class="classification__wrapper">
-                    <a href="#" class="classification__item">
+                    {% for c in category %}
+                    <a href="{% url 'catalogue' %}" class="classification__item">
+                        <img src="{{c.logo.url}}" alt="{{c.name}}" class="classification__photo">
+                        <p class="classification__text">
+                            {{c.name}}
+                        </p>
+                    </a>
+                    {% endfor %}
+                    <!-- <a href="#" class="classification__item">
                         <img src="{% static 'gagafood/images/dining.png' %}" alt="Столовая" class="classification__photo">
                         <p class="classification__text">
                             Столовые
@@ -94,12 +103,12 @@
                         <p class="classification__text">
                             Кофейни
                         </p>
-                    </a>
+                    </a> -->
             </div>
             </section>
             <section class="page__baner baner">
                 <div class="baner__wrapper">
-                    <div class="baner__title">GaGaFood</div>
+                    <h1 class="baner__title">GaGaFood</h1>
                     <div class="baner__text">Сервис доставки еды из ресторанов в Москве</div>
                     <div class="baner__wrapper-button">
                         <a href="{% url 'catalogue' %}" class="baner__button">
@@ -112,7 +121,7 @@
             <div class="slideshow-container top-restaurants__wrapper_min">
                 <h2 class="top-restaurants__title">Лучшие рестораны</h2>
                 <div class="top-restaurants__body">
-                    <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <div class="mySlides fade">
                         <img src="{% static 'gagafood/images/BUZFood-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                         <div class="top-restaurants__name">BUZFood</div>
@@ -126,9 +135,9 @@
                     <div class="mySlides fade" id="rewu">
                         <img src="{% static 'gagafood/images/ClaudeMonet-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                         <div class="top-restaurants__name">Claude Monet</div>
-                        <div class="top-restaurants__description">Французская кухня</div></a>
+                        <div class="top-restaurants__description">Французская кухня</div>
                     </div>
-                    <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
             </div>
             <div class="dots">
@@ -140,21 +149,21 @@
                     <h2 class="top-restaurants__title">Лучшие рестораны</h2>
                     <div class="top-restaurants__body">
                         <div class="top-restaurants__card">
-                            <a href="" class="top-restaurants__link">
+                            <a href="{% url 'catalogue' %}" class="top-restaurants__link">
                                 <img src="{% static 'gagafood/images/BUZFood-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                                 <div class="top-restaurants__name">BUZFood</div>
                                 <div class="top-restaurants__description">Премиальные салаты</div>
                             </a>
                         </div>
                         <div class="top-restaurants__card">
-                            <a href="#" class="top-restaurants__link">
+                            <a href="{% url 'catalogue' %}" class="top-restaurants__link">
                                 <img src="{% static 'gagafood/images/KFC-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                                 <div class="top-restaurants__name">KFC</div>
                                 <div class="top-restaurants__description">Фастфуд</div>
                             </a>
                         </div>
                         <div class="top-restaurants__card">
-                            <a href="#" class="top-restaurants__link">
+                            <a href="{% url 'catalogue' %}" class="top-restaurants__link">
                                 <img src="{% static 'gagafood/images/ClaudeMonet-top.jpg' %}" alt="Карточка ресторана" class="top-restaurants__cover">
                                 <div class="top-restaurants__name">Claude Monet</div>
                                 <div class="top-restaurants__description">Французская кухня</div></a>
@@ -164,7 +173,9 @@
             </section>
             <section class="page__text-block text-block">
                 <div class="text-block__wrapper">
+                    <h2 class="visible__hidden">О GagaFood:</h2>
                     <article class="text-block__article">
+                        <h3 class="visible__hidden">Сервис доставки еды:</h3>
                         <p class="text-block__text">
                             Сервис доставки еды <span> GaGaFood </span> – это отличный 
                             выбор для тех, кто любит вкусные блюда, но не имеет достаточно
@@ -180,6 +191,7 @@
                             из свежих продуктов, большинство из которых производится на 
                             местных фермерских и рыбных хозяйствах.
                         </p>
+                        <h3 class="visible__hidden">Возможности:</h3>
                         <p class="text-block__text">На сайте и в приложении Broniboy можно недорого заказать:</p>
                         <ul class="text-block__text-list text-list">
                             <li class="text-list__link">бургеры;</li>

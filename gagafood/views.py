@@ -7,7 +7,6 @@ from restaurant.models import *
 from dish.models import Dish
 from .forms import *
 from feedback.models import *
-from .utils import *
 from django.views.generic import CreateView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.views import LoginView
@@ -26,7 +25,11 @@ def index(request):
                 form.add_error(None, 'Ошибка отправки данных')
     else:
         form = AddFeedback()
-    return render(request, 'gagafood/index.html', {'form': form})
+    # category = Category.objects.filter(name='Фастфуд')
+    category = Category.objects.all()
+    restaurants = Restaurants.objects.filter(category=1)
+
+    return render(request, 'gagafood/index.html', {'form': form, 'category': category, })
 
 
 def catalogue(request):
@@ -46,16 +49,12 @@ def show_restaurant(request, restaurant_id):
         'restaurants': restaurants,
         'restaurant_selected': restaurant_id,
         'dish': Dish.objects.all(),
-        # 'dish': dish,
+        'title': 'Ресторан',
     }
     return render(request, 'gagafood/restaurant.html', context)
 
 
-def show_menu(request, restaurant_id):
-    dish = Dish.objects.all()
-
-
-class RegisterUser(DataMixin, CreateView):
+class RegisterUser(CreateView):
     form_class = RegisterUserForm
     template_name = 'gagafood/registration.html'
     success_url = reverse_lazy('login')
@@ -75,7 +74,7 @@ def profile(request):
     return render(request, 'gagafood/profile.html')
 
 
-class LoginUser(DataMixin, LoginView):
+class LoginUser(LoginView):
     form_class = LoginUserForm
     template_name = 'gagafood/login.html'
 
@@ -101,3 +100,7 @@ def profile(request):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+
+def basket(request):
+    return render(request, 'gagafood/basket.html')
