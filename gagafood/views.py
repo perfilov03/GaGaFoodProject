@@ -1,4 +1,4 @@
-from multiprocessing import AuthenticationError
+from multiprocessing import AuthenticationError, context
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
@@ -29,7 +29,7 @@ def index(request):
     category = Category.objects.all()
     restaurants = Restaurants.objects.filter(category=1)
 
-    return render(request, 'gagafood/index.html', {'form': form, 'category': category, })
+    return render(request, 'gagafood/index.html', {'form': form, 'category': category, 'title': 'GaGaFood'})
 
 
 def catalogue(request):
@@ -38,6 +38,7 @@ def catalogue(request):
     context = {
         'restaurants': restaurants,
         'category': category,
+        'title': 'Каталог ресторанов',
         # 'cat_selected': restaurant_id,
     }
     return render(request, 'gagafood/catalogue.html', context=context)
@@ -103,4 +104,7 @@ def logout_user(request):
 
 
 def basket(request):
-    return render(request, 'gagafood/basket.html')
+    context = {
+        'title': 'Корзина',
+    }
+    return render(request, 'gagafood/basket.html', context=context)

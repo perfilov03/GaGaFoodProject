@@ -1,19 +1,6 @@
+{% extends 'gagafood/_base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог ресторанов</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="{% static 'gagafood/images/Logo.svg' %}">
-    <link rel="stylesheet" href="{% static 'gagafood/src/css/reset.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'gagafood/src/css/style.css' %}" type="text/css">
-</head>
-<body>
-    <div class="wrapper">
-        <!-- HEADER -->
+{% block content %}
         <main class="page">
             <section class="page__catalogue catalogue">
                 <div class="catalogue__wrapper">
@@ -21,13 +8,6 @@
                         <a href="{% url 'home' %}" class="crumbs__link">Главная</a> / Рестораны и кафе
                     </div>
                     <h1 class="catalogue__title">Рестораны и кафе</h1>
-                    <!-- <form action="" class="catalogue__form form">
-                        <select type="text" class="form__filter">
-                        <div class="form__search">
-                            <input type="text" class="form__string">
-                            <button class="form__button"></button>
-                        </div>
-                    </form> -->
                     <div class="catalogue__body">
                         {% for r in restaurants %}
                         <div class="catalogue__card">
@@ -46,9 +26,4 @@
                     </div>
                 </div>
             </section>
-        </main>
-        <!-- FOOTER -->
-    </div>
-    <script src="{% static 'gagafood/src/scripts/app.js' %}"></script>
-</body>
-</html>
+{% endblock %}

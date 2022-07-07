@@ -1,0 +1,57 @@
+{% extends 'gagafood/_base.html' %}
+{% load static %}
+{% block content %}
+        <main class="basket">
+            <div class="basket__wrapper">
+                <div class="basket__crumbs crumbs">
+                    <a href="{% url 'home' %}" class="crumbs__link"> &lt; Назад </a> 
+                </div>
+                <h1 class="basket__title">{{title}}</h1>
+                <section class="basket__order order">
+                    <h2 class="order__title">Мой заказ:</h2>
+                    <div class="order__wrapper">
+                    <!-- Условие -->
+                        <div class="order__alert">
+                            <p class="order__message">
+                                В корзине пусто
+                            </p>
+                            <div class="order__follow">
+                                <a href="{% url 'catalogue' %}" class="order__link"> Перейти в каталог </a> 
+                            </div>
+                        </div>
+                    <!-- Иначе -->
+                    </div>
+                </section>
+                <div class="line"></div>
+                <section class="basket__placing placing">
+                    <h2 class="visible__hidden">Оформить заказ</h2>
+                    <div class="placing__body">
+                        <div class="placing__card">
+                            <h3 class="placing__title">
+                                Время доставки:
+                            </h3>
+                            <p class="placing__info">
+                                40-50 мин.
+                            </p>
+                        </div>
+                        <div class="placing__card">
+                            <h3 class="placing__title">
+                                Сумма заказа:
+                            </h3>
+                            <p class="placing__info">
+                                0 руб.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="placing__buttons">
+                        <button class="placing__submit">
+                            Перейти к оформлению
+                        </button>
+                        <div class="placing__link">
+                            <a href="{% url 'catalogue' %}" class="placing__link"> Вернуться к выбору </a> 
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+{% endblock %}

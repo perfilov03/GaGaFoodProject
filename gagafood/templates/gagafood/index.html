@@ -1,61 +1,6 @@
+{% extends 'gagafood/_base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GaGaFood</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="{% static 'gagafood/images/Logo.svg' %}">
-    <link rel="stylesheet" href="{% static 'gagafood/src/css/reset.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'gagafood/src/css/style.css' %}" type="text/css">
-</head>
-<body>
-    <div class="wrapper">
-        <header class="header">
-            <div class="header__wrapper">
-                <div class="header__navigation">
-                    <div class="header__menu menu">
-                        <div class="menu__burger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="menu__box">
-                            <ul class="menu__list">
-                                <li class="menu__item"><img src="{% static 'gagafood/images/Logo.svg' %}" alt="Logo" class="menu__logo"></li>
-                                <li class="menu__item"><a href="#">Главная</a></li>
-                                <li class="menu__item"><a href="{% url 'catalogue' %}">Рестораны и кафе</a></li>
-                                <li class="menu__item"><a href="#">Заказать доставку</a></li>
-                                <li class="menu__item"><a href="#">Социальные сети</a></li>
-                                <li class="menu__item"><a href="#">Контакты</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="header__search">
-                        <img src="{% static 'gagafood/images/Search.svg' %} " alt="Search" class="header__image">
-                    </div>
-                </div>
-                <div class="header__cover">
-                    <img src="{% static 'gagafood/images/Logo.svg' %}" alt="Logo" class="header__logo">
-                </div>
-                <div class="header__user-management">
-                    <a class="header__icon" href="{% url 'basket' %}">
-                        <img src="{% static 'gagafood/images/basket.svg' %}" alt="Basket" class="header__image">
-                    </a>
-                    {% if request.user.is_authenticated %}
-                    <a class="header__icon" href="{% url 'profile' %}">
-                        <img src="{% static 'gagafood/images/profile.svg' %}" alt="Profile" class="header__image">
-                    </a>
-                    {% else %}
-                    <a class="header__icon" href="{% url 'login' %}">
-                        <img src="{% static 'gagafood/images/profile.svg' %}" alt="Profile" class="header__image">
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-        </header>
+{% block content %}
         <main class="page">
             <section class="page__classification classification">
                 <h2 class="visible__hidden">Категории ресторанов:</h2>
@@ -68,42 +13,6 @@
                         </p>
                     </a>
                     {% endfor %}
-                    <!-- <a href="#" class="classification__item">
-                        <img src="{% static 'gagafood/images/dining.png' %}" alt="Столовая" class="classification__photo">
-                        <p class="classification__text">
-                            Столовые
-                        </p>
-                    </a>
-                    <a href="#" class="classification__item">
-                        <img src="{% static 'gagafood/images/fastfood.png' %}" alt="Фастфуд" class="classification__photo">
-                        <p class="classification__text">
-                            Фастфуд
-                        </p>
-                    </a>
-                    <a href="#" class="classification__item">
-                        <img src="{% static 'gagafood/images/pizza.png' %}" alt="Пиццерии" class="classification__photo">
-                        <p class="classification__text">
-                            Пиццерии
-                        </p>
-                    </a>
-                    <a href="#" class="classification__item">
-                        <img src="{% static 'gagafood/images/rolls.png' %}" alt="Азиатская кухня" class="classification__photo">
-                        <p class="classification__text">
-                            Азиатская кухня
-                        </p>
-                    </a>
-                    <a href="#" class="classification__item">
-                        <img src="{% static 'gagafood/images/france.png' %}" alt="Французская кухня" class="classification__photo">
-                        <p class="classification__text">
-                            Французская кухня
-                        </p>
-                    </a>
-                    <a href="#" class="classification__item">
-                        <img src="{% static 'gagafood/images/coffee.png' %}" alt="Кофейни" class="classification__photo">
-                        <p class="classification__text">
-                            Кофейни
-                        </p>
-                    </a> -->
             </div>
             </section>
             <section class="page__baner baner">
@@ -242,61 +151,4 @@
                 </div>
             </section>
         </main>
-        <footer class="footer">
-            <div class="footer__wrapper">
-                <div class="footer__contacts contacts">
-                    <img src="{% static 'gagafood/images/Logo.svg' %}" alt="Логотип" class="contacts__logo">
-                    <div class="contacts__article">
-                        <p class="contacts__title">Контакты:</p>
-                        <a href="tel:89308388696" class="contacts__telephone">8 (930) 838 86-96</a>
-                        <a href="mailto:gagafood@food.com" class="contacts__email">gagafood@food.com</a>
-                    </div>
-                </div>
-                <div class="footer__map map">
-                    <div class="map__wrapper">
-                        <div class="map__navigation">
-                            <ul class="map__list">
-                                <li class="map__item"><p class="map__link">Еда:</p></li>
-                                <li class="map__item"><a href="#" class="map__link">Суши и роллы</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Пицца</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Бургеры</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Шашлык</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Шаурма</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Торты</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Пироги</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Кофе</a></li>
-                            </ul>
-                        </div>
-                        <div class="map__navigation">
-                            <ul class="map__list">
-                                <li class="map__item"><p class="map__link visually-hidden">Еда:</p></li>
-                                <li class="map__item"><a href="#" class="map__link">Французская кухня</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Здоровая еда</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Вегатарианские блюда</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Мороженое</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Грузинская кухня</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Азиатская кухня</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Морепродукты</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Завтраки</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="map__navigation">
-                        <ul class="map__list">
-                            <li class="map__item"><p class="map__link">О компании:</p></li>
-                            <li class="map__item"><a href="#" class="map__link">Контакты</a></li>
-                            <li class="map__item"><a href="#" class="map__link">Доставка</a></li>
-                            <li class="map__item"><a href="#" class="map__link">Партнеры</a></li>
-                            <li class="map__item"><a href="#" class="map__link">О нас</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer__copyright">
-                    © Ostrovsky Production inc.
-                </div>
-            </div>
-        </footer>
-    </div>
-    <script src="{% static 'gagafood/src/scripts/app.js' %}"></script>
-</body>
-</html>
+{% endblock %}
