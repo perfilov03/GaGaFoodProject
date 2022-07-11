@@ -71,7 +71,7 @@ a {
   text-decoration: none;
 }
 
-.visible__hidden {
+.visible-hidden {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   width: 1px;
@@ -979,6 +979,12 @@ slideshow-container {
   background-color: #ffffff;
 }
 
+.catalogue__photo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
 .catalogue__description {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1189,6 +1195,8 @@ slideshow-container {
 .info__cover {
   width: 400px;
   height: 339px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .page__menu {
@@ -1236,6 +1244,9 @@ slideshow-container {
   width: 100%;
   margin-bottom: 20px;
   max-width: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
 }
 
 .menu__article {
@@ -1294,6 +1305,14 @@ slideshow-container {
   font-size: 1rem;
 }
 
+.menu__error {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #D137A6;
+  text-align: center;
+  margin: 80px 0;
+}
+
 @media (max-width: 900px) {
   .menu__name {
     font-size: 1.175rem;
@@ -1310,6 +1329,10 @@ slideshow-container {
   .menu__button {
     font-size: 0.9rem;
   }
+
+  .menu__error {
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 776px) {
   .info__cover {
@@ -1324,6 +1347,11 @@ slideshow-container {
   .info__description {
     font-size: 1rem;
     max-width: 352px;
+  }
+
+  .menu__error {
+    font-size: 1.3rem;
+    margin: 70px 0;
   }
 }
 @media (max-width: 750px) {
@@ -1366,6 +1394,11 @@ slideshow-container {
 
   .info__article {
     margin-bottom: 30px;
+  }
+
+  .menu__error {
+    font-size: 1.2rem;
+    margin: 50px 0;
   }
 }
 @media (max-width: 530px) {
@@ -2064,4 +2097,32 @@ body {
   background-color: #D9D9D9;
   width: 100%;
   margin-bottom: 30px;
+}
+
+@media print {
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+  *,
+*:before,
+*:after {
+    background: transparent !important;
+    color: #000 !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  header, footer, .menu__button, .crumbs {
+    display: none;
+  }
+
+  img {
+    page-break-inside: avoid;
+  }
+
+  .menu__photo {
+    max-width: 200px;
+  }
 }

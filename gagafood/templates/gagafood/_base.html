@@ -38,7 +38,9 @@
                     </div>
                 </div>
                 <div class="header__cover">
-                    <img src="{% static 'gagafood/images/Logo.svg' %}" alt="Logo" class="header__logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'gagafood/images/Logo.svg' %}" alt="Logo" class="header__logo">
+                    </a>
                 </div>
                 <div class="header__user-management">
                     {% if request.user.is_authenticated %}
@@ -78,27 +80,27 @@
                         <div class="map__navigation">
                             <ul class="map__list">
                                 <li class="map__item"><p class="map__link">Еда:</p></li>
-                                <li class="map__item"><a href="#" class="map__link">Суши и роллы</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Пицца</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Бургеры</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Шашлык</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Шаурма</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Торты</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Пироги</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Кофе</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Суши и роллы</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Пицца</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Бургеры</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Шашлык</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Шаурма</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Торты</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Пироги</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Кофе</a></li>
                             </ul>
                         </div>
                         <div class="map__navigation">
                             <ul class="map__list">
                                 <li class="map__item"><p class="map__link visually-hidden">Еда:</p></li>
-                                <li class="map__item"><a href="#" class="map__link">Французская кухня</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Здоровая еда</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Вегатарианские блюда</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Мороженое</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Грузинская кухня</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Азиатская кухня</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Морепродукты</a></li>
-                                <li class="map__item"><a href="#" class="map__link">Завтраки</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Французская кухня</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Здоровая еда</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Вегатарианские блюда</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Мороженое</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Грузинская кухня</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Азиатская кухня</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Морепродукты</a></li>
+                                <li class="map__item"><a href="{% url 'catalogue' %}" class="map__link">Завтраки</a></li>
                             </ul>
                         </div>
                     </div>

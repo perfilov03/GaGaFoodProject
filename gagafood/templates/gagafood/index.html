@@ -2,8 +2,7 @@
 {% load static %}
 {% block content %}
         <main class="page">
-            <section class="page__classification classification">
-                <h2 class="visible__hidden">Категории ресторанов:</h2>
+            <div class="page__classification classification">
                 <div class="classification__wrapper">
                     {% for c in category %}
                     <a href="{% url 'catalogue' %}" class="classification__item">
@@ -14,7 +13,7 @@
                     </a>
                     {% endfor %}
             </div>
-            </section>
+            </div>
             <section class="page__baner baner">
                 <div class="baner__wrapper">
                     <h1 class="baner__title">GaGaFood</h1>
@@ -27,7 +26,7 @@
                 </div>
             </section>
             <section class="page__top-restaurants top-restaurants">
-            <div class="slideshow-container top-restaurants__wrapper_min">
+            <div class="slideshow-container top-restaurants__wrapper">
                 <h2 class="top-restaurants__title">Лучшие рестораны</h2>
                 <div class="top-restaurants__body">
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -82,9 +81,9 @@
             </section>
             <section class="page__text-block text-block">
                 <div class="text-block__wrapper">
-                    <h2 class="visible__hidden">О GagaFood:</h2>
+                    <h2 class="visible-hidden text-block__title">О GagaFood:</h2>
                     <article class="text-block__article">
-                        <h3 class="visible__hidden">Сервис доставки еды:</h3>
+                        <h3 class="visible-hidden text-block__title">Сервис доставки еды:</h3>
                         <p class="text-block__text">
                             Сервис доставки еды <span> GaGaFood </span> – это отличный 
                             выбор для тех, кто любит вкусные блюда, но не имеет достаточно
@@ -100,7 +99,7 @@
                             из свежих продуктов, большинство из которых производится на 
                             местных фермерских и рыбных хозяйствах.
                         </p>
-                        <h3 class="visible__hidden">Возможности:</h3>
+                        <h3 class="visible-hidden text-block__title">Возможности:</h3>
                         <p class="text-block__text">На сайте и в приложении Broniboy можно недорого заказать:</p>
                         <ul class="text-block__text-list text-list">
                             <li class="text-list__link">бургеры;</li>

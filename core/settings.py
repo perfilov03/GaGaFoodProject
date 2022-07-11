@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'authentication',
     'restaurant',
     'dish',
-    'menu',
-    'basket',
     'gagafood',
     'feedback',
     'discount_coupons',

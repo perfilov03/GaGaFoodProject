@@ -59,6 +59,10 @@
     background-color: #ffffff;
 }
 .catalogue__photo {
+    // max-height: 253px;
+    object-fit: cover;
+    // width: auto;
+    aspect-ratio: 16 / 9;
 }
 .catalogue__description {
     display: flex;

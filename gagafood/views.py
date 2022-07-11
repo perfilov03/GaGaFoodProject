@@ -25,8 +25,7 @@ def index(request):
                 form.add_error(None, 'Ошибка отправки данных')
     else:
         form = AddFeedback()
-    # category = Category.objects.filter(name='Фастфуд')
-    category = Category.objects.all()
+    category = Category.objects.all()[:8]
     restaurants = Restaurants.objects.filter(category=1)
 
     return render(request, 'gagafood/index.html', {'form': form, 'category': category, 'title': 'GaGaFood'})

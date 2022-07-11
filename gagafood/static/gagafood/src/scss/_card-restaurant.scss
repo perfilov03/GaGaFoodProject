@@ -39,6 +39,7 @@
 .info__cover {
     width: 400px;
     height: 339px;
+    object-fit: cover;
 }
 
 .page__menu {
@@ -77,6 +78,8 @@
     width: 100%;
     margin-bottom: 20px;
     max-width: 250px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
 }
 .menu__article {
     display: flex;
@@ -112,6 +115,13 @@
     @extend %buttonss;
     font-size: 1rem;
 }
+.menu__error {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: $pink-cl;
+    text-align: center;
+    margin: 80px 0;
+}
 
 @media (max-width: 900px) {
     .menu__name {
@@ -127,7 +137,9 @@
         @extend %buttonss;
         font-size: 0.9rem;
     }
-
+    .menu__error {
+        font-size: 1.5rem;
+    }
 }
 
 
@@ -142,6 +154,10 @@
     .info__description {
         font-size: 1rem;
         max-width: 352px;
+    }
+    .menu__error {
+        font-size: 1.3rem;
+        margin: 70px 0;
     }
 }
 
@@ -176,6 +192,10 @@
     }
     .info__article {
         margin-bottom: 30px;
+    }
+    .menu__error {
+        font-size: 1.2rem;
+        margin: 50px 0;
     }
 }
 
