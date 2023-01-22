@@ -2,6 +2,8 @@ from tabnanny import verbose
 from django.db import models
 from django.urls import reverse
 from django.conf.urls.static import static
+from django.contrib import admin
+from simple_history.models import HistoricalRecords
 
 
 class Restaurants (models.Model):
@@ -10,6 +12,8 @@ class Restaurants (models.Model):
         'Category', verbose_name='Категория ресторана', on_delete=models.PROTECT, null=True)
     description = models.TextField(verbose_name='О ресторане')
     logo = models.ImageField(verbose_name='Логотип', upload_to='restaurant')
+
+    history = HistoricalRecords()
 
     def __str__(self):
         return self.title
@@ -28,6 +32,8 @@ class Category (models.Model):
         verbose_name='Название категории', max_length=100, db_index=True)
     logo = models.ImageField(verbose_name='Логотип',
                              upload_to='filters', null=True)
+
+    history = HistoricalRecords()
 
     def __str__(self):
         return self.name

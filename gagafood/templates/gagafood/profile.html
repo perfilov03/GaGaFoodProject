@@ -83,6 +83,9 @@
                             {% endif %}
                             <span></span>
                         </div>
+                        <div class="">
+                            <a href="{% url 'edit' %}" class="button">Редактировать</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -106,6 +109,9 @@
                         {% endfor %}
                     </div>
                 </div>
+            </section>
+            <section class="profile__delete delete">
+                <a href="#" class="button">Удалить аккаунт</a>
             </section>
         </div>
     </main>

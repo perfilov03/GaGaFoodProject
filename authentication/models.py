@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from authentication.managers import UserManager
+from simple_history.models import HistoricalRecords
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -14,6 +15,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(verbose_name='Персонал', default=False)
     is_superuser = models.BooleanField(
         verbose_name='Администратор', default=False)
+
+    history = HistoricalRecords()
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'telephone']
